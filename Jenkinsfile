@@ -3,6 +3,11 @@ pipeline {
     dockerimagename = "pttzx/nodeapp"
     dockerImage = ""
   }
+  properties([
+    parameters([
+        string(name: 'CompanyName', description: '', defaultValue: '', trim: true)
+    ])
+    ])
   agent any
   stages {
 
