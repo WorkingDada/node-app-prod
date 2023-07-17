@@ -1,14 +1,14 @@
 pipeline {
+  properties([
+    parameters([
+        string(name: 'Version', description: '', defaultValue: '', trim: true)
+    ])
+  ])
   environment {
     dockerimagename = "pttzx/nodeapp"
     dockerImage = ""
   }
   agent any
-  options([
-    parameters([
-        string(name: 'Version', description: '', defaultValue: '', trim: true)
-    ])
-  ])
   stages {
     stage('Checkout Source') {
       steps {
