@@ -4,7 +4,7 @@ pipeline {
     dockerImage = ""
   }
   agent any
-  properties([
+  options([
     parameters([
         string(name: 'Version', description: '', defaultValue: '', trim: true)
     ])
