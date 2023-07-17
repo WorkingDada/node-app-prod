@@ -3,14 +3,13 @@ pipeline {
     dockerimagename = "pttzx/nodeapp"
     dockerImage = ""
   }
+  agent any
   properties([
     parameters([
-        string(name: 'CompanyName', description: '', defaultValue: '', trim: true)
+        string(name: 'Version', description: '', defaultValue: '', trim: true)
     ])
-    ])
-  agent any
+  ])
   stages {
-
     stage('Checkout Source') {
       steps {
         git branch: 'main', url: 'https://github.com/WorkingDada/node-app.git'
