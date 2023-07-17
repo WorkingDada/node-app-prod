@@ -18,6 +18,8 @@ pipeline {
         script {
           kubernetesDeploy(configs: "deploymentservice.yml", kubeconfigId: "kubernetes")
         }
+
+        echo "version: ${params.Version}"
       }
     }
   }
