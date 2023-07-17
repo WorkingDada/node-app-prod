@@ -1,9 +1,7 @@
 pipeline {
-  properties([
-    parameters([
+    parameters{
         string(name: 'Version', description: '', defaultValue: '', trim: true)
-    ])
-  ])
+  }
   environment {
     dockerimagename = "pttzx/nodeapp"
     dockerImage = ""
