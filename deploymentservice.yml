@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nodeapp-production
-  namespace: techx-trainee-dev
+  namespace: techx-trainee-production
   labels:
     app: nodeapp
 spec:
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: nodeserver
-        image: registry.hub.docker.com/pttzx/nodeapp:latest
+        image: registry.hub.docker.com/pttzx/nodeapp:##VERSION##
         ports:
         - containerPort: 3000
       imagePullSecrets:
