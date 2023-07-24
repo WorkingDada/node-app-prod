@@ -10,7 +10,10 @@ pipeline {
   stages {
     stage('Checkout Source') {
       steps {
-        git branch: 'main', url: 'https://github.com/WorkingDada/node-app-prod.git'
+        echo "--- Checkout Source ---"
+        dir("${WORKSPACE}/app-code") {
+          git branch: "main", url: "https://github.com/WorkingDada/node-app-prod.git"
+        }
       }
     }
 
